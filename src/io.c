@@ -34,14 +34,16 @@
 
 #include <unistd.h>
 #include <arpa/inet.h>
-#include <linux/if_ppp.h>
 #include <netinet/tcp.h>
 #include <sys/ioctl.h>
-
 
 #include <errno.h>
 #include <signal.h>
 #include <string.h>
+
+#if HAVE_LINUX_IF_PPP_H
+#include <linux/if_ppp.h>
+#endif
 
 #if HAVE_MACH_MACH_H
 /* this is typical for mach kernel used on Mac OS X */
